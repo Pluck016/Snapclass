@@ -66,7 +66,7 @@ def student_dashboard():
 
 
         stats = stats_map.get(sid,{"total":0, "attended": 0} )
-       def unenroll_button():
+        def unenroll_button():
     # Adding a unique key using 'sid' prevents the StreamlitDuplicateElementId error
             if st.button(
                 "Unenroll from this course", 
