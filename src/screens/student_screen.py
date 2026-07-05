@@ -117,11 +117,13 @@ def student_screen():
     st.header('Login using FaceID', text_alignment='center')
     st.space()
     st.space()
-    
-    show_registration = False
-    photo_source = st.camera_input("Position your face in the center")
 
-    if photo_source:
+    tab1,tab2 =  st.tabs(["📸FaceID Login","🎙️Voice Attendence Verification"])
+
+    with tab1:
+        show_registration = False
+        photo_source = st.camera_input("Position your face in the center")
+        if photo_source:
         img = np.array(Image.open(photo_source))
 
         with st.spinner('AI is scanning..'):
@@ -157,6 +159,8 @@ def student_screen():
 
 
             audio_data = None
+    with tab2:
+        st.subheader('Voice Verification')
 
             try:
                 audio_data = st.audio_input('Record a short phrase like I am present, My name is Akash.')
