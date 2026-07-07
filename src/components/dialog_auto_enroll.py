@@ -22,7 +22,7 @@ def auto_enroll_dialog(subject_code):
         if st.button('Got it!'):
             st.query_params.clear()
             st.rerun()
-        return()
+        return
     st.markdown(f'Would you like to enroll in **{subject["name"]}**?')
 
     col1, col2 = st.columns(2)
