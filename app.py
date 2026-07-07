@@ -32,7 +32,8 @@ def main():
             
         # Safe here because we know join_code exists
         if st.session_state.get('is_logged_in') and st.session_state.get('user_role') == 'student':
-            auto_enroll_dialog(join_code)
+            with st.modal("Quick Enrollment"):
+                auto_enroll_dialog(join_code)
 
 if __name__ == "__main__":
     main()
